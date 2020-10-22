@@ -33,6 +33,9 @@ class Form extends Component {
         const { firstName, lastName, email } = this.state; 
 
         return (
+          <div>
+          <h1>Form character</h1>
+          <h3>Add New</h3>
             <form onSubmit={this.onFormSubmit}>
                 <label for="firstName">FirstName</label>
                 <input 
@@ -59,6 +62,7 @@ class Form extends Component {
                     Submit
                 </button>
             </form>
+            </div>
         );
     }
 }

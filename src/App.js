@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Table from './Table';
 import Form from './Form';
+import Auth from './Auth';
+import { Switch, Route } from 'react-router-dom';
 
 
 class App extends Component {
@@ -26,15 +28,12 @@ render() {
   const { characters } = this.state;
   
   return (
+     <Switch>
       <div className="container">
-          <h1>Form character</h1>
-          <h3>Add New</h3>
-          <Form handleSubmit={this.handleSubmit} />
-          <Table
-              characterData={characters}
-              removeCharacter={this.removeCharacter}
-          /> 
+          <Route exact path='/auth' component={Auth}/> 
+          <Route exact path='/form' component={Form, Table} />
       </div>
+      </Switch>
   );
 }
 }
